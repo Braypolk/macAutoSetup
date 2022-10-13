@@ -23,8 +23,8 @@ then
 fi
 brew tap homebrew/cask-drivers
 brew update
-xargs brew install < brew.txt
-xargs brew install --cask < brewCask.txt
+xargs brew install < $IN_DIR/brew.txt
+xargs brew install --cask < $IN_DIR/brewCask.txt
 brew upgrade
 brew cleanup
 
@@ -44,13 +44,6 @@ fi
 ssh-keygen
 cat ~/.ssh/id_rsa.pub | pbcopy
 
-gh auth login
-
-gh repo clone deviantfero/wpgtk
-cd wpgtk
-sudo pip install .
-wpg
-
 cd $IN_DIR
 
 # place configs and prefs
@@ -63,5 +56,14 @@ sudo cp -R prefs/. ~/Library/Preferences/
 sudo cp terminal/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
+cd
+gh auth login
+gh repo clone deviantfero/wpgtk
+cd wpgtk
+sudo pip3 install pywall
+sudo pip3 install wpgtk
+wpg
+
+cd $IN_DIR
 chmod +x submodules.sh
 source ./submodules.sh
