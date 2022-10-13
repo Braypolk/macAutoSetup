@@ -25,6 +25,12 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 
+function gg() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+
 alias chrome='open -a "Google Chrome"'
 alias candy='ts-node ~/metaplex-foundation/metaplex/js/packages/cli/src/candy-machine-cli.ts'
 alias cdc='cd ~/Documents/code/'

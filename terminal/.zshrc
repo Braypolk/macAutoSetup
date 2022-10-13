@@ -38,7 +38,7 @@ zmodload -i zsh/complist
 
 source /Users/$USER/.zsh/completion.zsh
 source /Users/$USER/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /Users/$USER/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /Users/$USER/.zsh/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 source /Users/$USER/.zsh/aliases.zsh
 # source /Users/$USER/.zsh/secret.zsh
 # source <(kubectl completion zsh)
