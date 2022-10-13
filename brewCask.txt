@@ -8,3 +8,4 @@ spotify
 unnaturalscrollwheels
 via
 vial
+visual-studio-code
