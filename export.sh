@@ -46,4 +46,4 @@ sudo cp ~/.config/starship.toml terminal/
 sudo cp ~/.gitignore_global terminal/
 
 rm submodules.sh
-for x in $(find . -mindepth 1 -type d) ; do if [ -d "${x}/.git" ] ; then cd "${x}" ; origin="$(sudo git config --get remote.origin.url)" ; cd - 1>/dev/null; echo git clone "${origin}" "~/.zsh/" >> submodules.txt ; fi ; done
+for x in $(find . -mindepth 1 -type d) ; do if [ -d "${x}/.git" ] ; then cd "${x}" ; origin="$(sudo git config --get remote.origin.url)" ; cd - 1>/dev/null; echo git clone "${origin}" "~/.zsh/" >> submodules.sh ; fi ; done
