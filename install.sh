@@ -62,3 +62,6 @@ sudo cp -R prefs/. ~/Library/Preferences/
 
 sudo cp terminal/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
+
+chmod +x submodules.sh
+source ./submodules.sh
