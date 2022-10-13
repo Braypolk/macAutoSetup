@@ -1,10 +1,10 @@
 alt-tab
-darktable
 libreoffice
 logitech-options
 maccy
 protonvpn
 rancher
+spotify
 unnaturalscrollwheels
 via
 vial
