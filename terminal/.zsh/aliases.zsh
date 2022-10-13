@@ -2,8 +2,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias mw='cd /Users/braypolkinghorne/Documents/code/mw'
-alias per='cd //Users/braypolkinghorne/Documents/code/personal'
+USER="$(whoami)"
+
+alias mw="cd /Users/$USER/Documents/code/mw"
+alias per="cd /Users/$USER/Documents/code/personal"
 
 alias la="ls -a"
 alias tf="terraform"

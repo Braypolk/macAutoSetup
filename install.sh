@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+IN_DIR=$(dirname $(realpath -s $0))
+
 # Install workman keyboard layout
 cd ~/Downloads
 curl -sS "https://github.com/workman-layout/Workman/zipball/master" > workman.zip
@@ -49,9 +51,14 @@ cd wpgtk
 sudo pip install .
 wpg
 
+cd $IN_DIR
+
 # place configs and prefs
-sudo cp /terminal/.zshrc ~/
-sudo cp -R /terminal/.zsh ~/
-sudo cp /terminal/starship.toml ~/.config/
+sudo cp terminal/.zshrc ~/
+sudo cp -R terminal/.zsh ~/
+sudo cp terminal/starship.toml ~/.config/
 
 sudo cp -R prefs/. ~/Library/Preferences/
+
+sudo cp terminal/.gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global

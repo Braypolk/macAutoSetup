@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+USER="$(whoami)"
+
 # get installed casks and packages
 brew leaves > brew.txt
 brew list --cask > brewCask.txt
@@ -8,14 +10,14 @@ brew list --cask > brewCask.txt
 tr "-" "\n" < brew.txt > b.txt
 tr "-" "\n" < brewCask.txt > bc.txt
 
-WORKDIR=$(pwd)
-
+WORKDIR=$(dirname $(realpath -s $0))
+echo $WORKDIR
 BREW=$WORKDIR"/b.txt"
 BREWCASK=$WORKDIR"/bc.txt"
 OTHER=$WORKDIR"/otherPrefs.txt"
 
 # get plist files
-cd /Users/braypolkinghorne/Library/Preferences
+cd /Users/$USER/Library/Preferences
 
 function cpPrefs () {
     while read KEY2; do
@@ -41,35 +43,4 @@ rm b.txt
 sudo cp ~/.zshrc terminal/.zshrc
 sudo cp -R ~/.zsh terminal/
 sudo cp ~/.config/starship.toml terminal/
-
-# CASKS
-# alt-tab
-# unnaturalscrollwheels
-# visual-studio-code
-# copyclip
-# macs-fan-control
-# dozer
-# iterm2
-# spotify
-# rectangle
-
-# BREW
-# autoconf
-# cloc
-# geos
-# gh
-# go
-# gtk+3
-# helm
-# imagemagick
-# kubernetes-cli
-# pygobject3
-# screenresolution
-# starship
-# terraform
-# tree
-# wget
-# yarn
-# logitech-options
-# git
-# python
+sudo cp ~/.gitignore_global terminal/

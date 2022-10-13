@@ -1,14 +1,16 @@
 (cat ~/.cache/wal/sequences &)
 
-export PATH=/opt/homebrew/opt/python/libexec/bin:/Users/braypolkinghorne/solana/bin:$PATH
+USER="$(whoami)"
+
+export PATH=/opt/homebrew/opt/python/libexec/bin:/Users/$USER/solana/bin:$PATH
 export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libpq/lib
 export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/mysql-client/lib/
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/braypolkinghorne/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/braypolkinghorne/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "/Users/$USER/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/$USER/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/braypolkinghorne/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/braypolkinghorne/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "/Users/$USER/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/$USER/google-cloud-sdk/completion.zsh.inc"; fi
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
@@ -34,11 +36,11 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-source /Users/braypolkinghorne/.zsh/completion.zsh
-source /Users/braypolkinghorne/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /Users/braypolkinghorne/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /Users/braypolkinghorne/.zsh/aliases.zsh
-# source /Users/braypolkinghorne/.zsh/secret.zsh
+source /Users/$USER/.zsh/completion.zsh
+source /Users/$USER/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /Users/$USER/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /Users/$USER/.zsh/aliases.zsh
+# source /Users/$USER/.zsh/secret.zsh
 # source <(kubectl completion zsh)
 
 ghb
